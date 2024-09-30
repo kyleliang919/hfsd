@@ -172,8 +172,8 @@ def handle_speculative_generate(
             use_cache=use_cache,
         )
         target_cache = Mp.past_key_values
-        draft_logits = Mp.logits[..., current_position - 1:current_position + corrected_gamma - 1, :] # [1, corrected_gamma, vocab_size]
-        p = logits_processor(draft_logits) # [1, gamma, vocab_size]
+        target_logits = Mp.logits[..., current_position - 1:current_position + corrected_gamma - 1, :] # [1, corrected_gamma, vocab_size]
+        p = logits_processor(target_logits) # [1, gamma, vocab_size]
         
         # compute the last accepted draft position (rejection sampling)
         r = torch.rand(corrected_gamma, device=target.device)
@@ -345,8 +345,8 @@ def handle_mllama_speculative_generate(
             use_cache=use_cache,
         )
         target_cache = Mp.past_key_values
-        draft_logits = Mp.logits[..., current_position - 1:current_position + corrected_gamma - 1, :] # [1, corrected_gamma, vocab_size]
-        p = logits_processor(draft_logits) # [1, gamma, vocab_size]
+        target_logits = Mp.logits[..., current_position - 1:current_position + corrected_gamma - 1, :] # [1, corrected_gamma, vocab_size]
+        p = logits_processor(target_logits) # [1, gamma, vocab_size]
         
         # compute the last accepted draft position (rejection sampling)
         r = torch.rand(corrected_gamma, device=target.device)
