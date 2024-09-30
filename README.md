@@ -1,4 +1,4 @@
-# HFSD: Huggingface Compatible Speculative Decoding
+# HFSD: Huggingface Speculative Decoding
 A simple patch for speculative decoding, supporting llama3.2 vision instruct and llama3.2 text model.
 
 # Motivation:
