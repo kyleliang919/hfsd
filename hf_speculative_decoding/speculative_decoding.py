@@ -390,4 +390,4 @@ def handle_mllama_speculative_generate(
         if torch.isin(x, stop_tokens):
             return input_ids[0, prompt_len:current_position].tolist(), drafts_accepted / drafts_speculated
     
-    return input_ids[0, prompt_len:].tolist(), drafts_accepted / drafts_speculated
+    return input_ids[0, prompt_len:].tolist(), drafts_accepted + 1 / drafts_speculated + 1
