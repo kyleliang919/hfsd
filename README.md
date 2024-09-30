@@ -35,8 +35,7 @@ target.speculative_generate(
 # Installation
 Very simple and straightforward
 ```bash
-pip install git+https://github.com/kyleliang919/Speculative-Decoding.git
-pip install -e .
+pip install git+https://github.com/kyleliang919/hfsd.git
 ```
 
 # Usage
