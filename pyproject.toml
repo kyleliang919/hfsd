@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hf_speculative_decoding"
+version = "0.1.0"
+description = "A general starting point for speculative decoding that works"
+authors = [
+    { name = "Kaizhao Liang", email = "kaizhaol@utexas.edu" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "transformers"
+]
+
+[project.urls]
+homepage = "https://github.com/kyleliang919/hfsd"
+repository = "https://github.com/kyleliang919/hfsd"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["hf_speculative_decoding"]
